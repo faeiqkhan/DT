@@ -14,17 +14,16 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/j2y18lte/full_j2y18lte.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit from j2y18lte device
+$(call inherit-product, device/samsung/j2y18lte/device.mk)
 
-PRODUCT_NAME := lineage_j2y18lte
-BOARD_VENDOR := Samsung
-
-PRODUCT_GMS_CLIENTID_BASE := android-samsung
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=samsung/j2y18lteser/j2y18lte:7.1.1/NMF26X/J250FXWU2ASK2:user/release-keys \
-PRIVATE_BUILD_DESC="j2y18lteser-user 7.1.1 NMF26X J250FXWU2ASK2 release-keys"
-
+# Device identifier. This must come after all inclusions
+TARGET_VENDOR := Samsung
+PRODUCT_DEVICE := j2y18lte
+PRODUCT_NAME := full_j2y18lte
+PRODUCT_BRAND := Samsung
+PRODUCT_MODEL := Galaxy J2 Pro
+PRODUCT_MANUFACTURER := Samsung
