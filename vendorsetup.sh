@@ -1,0 +1,3 @@
+add_lunch_combo lineage_j2y18lte-user
+add_lunch_combo lineage_j2y18lte-userdebug
+add_lunch_combo lineage_j2y18lte-eng
