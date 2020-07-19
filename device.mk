@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/riva
+DEVICE_PATH := device/samsung/j2y18lte
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -36,16 +36,16 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := hdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Ambient display
-PRODUCT_PACKAGES += \
-    XiaomiDoze
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -353,10 +353,10 @@ PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.usb.sh
-
+# TODO
 # Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_riva
+#PRODUCT_PACKAGES += \
+#    librecovery_updater_riva
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -382,7 +382,7 @@ PRODUCT_PACKAGES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/xiaomi/riva
+    device/samsung/j2y18lte
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -401,10 +401,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
+# TODO
 # Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.riva
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.riva
 
 # Trust HAL
 PRODUCT_PACKAGES += \
@@ -442,4 +442,4 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/wifi/firmware/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 # Inherit common proprietary files
-$(call inherit-product-if-exists, vendor/xiaomi/riva/riva-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/j2y18lte/j2y18lte-vendor.mk)
